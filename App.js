@@ -6,16 +6,24 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {userState, useState} from 'react';
 import type {Node} from 'react';
+import ShoppingListHeader from './CustomComponents/ShoppingListHeader';
+import DefautUser from './CustomComponents/DefautUser';
+import uuid from 'react-native-uuid';
+import AddItem from './CustomComponents/AddItem';
+
 import {
+  FlatList,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
+  TextBase,
   useColorScheme,
   View,
+  Alert
 } from 'react-native';
 
 import {
@@ -25,6 +33,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import ListItem from './CustomComponents/ListItem';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -57,20 +66,53 @@ const App: () => Node = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  }
+  const scrollViewStyle = {
+    flex: 1,
+    backgroundColor: '#FFFFFF'
   };
 
+  const [items, setItems] = useState([
+          {id: uuid.v4(), text: "Milk"},
+          {id: uuid.v4(), text: "Eggs"},
+          {id: uuid.v4(), text: "Bread"},
+          {id: uuid.v4(), text: "Juice"}
+  ]);
+
+  const deleteItem = (id) => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id != id)
+    })
+  }
+
+  const addItem = text => {
+    if (!text) {
+      Alert.alert('Error', 'Please enter an item', {text: 'Ok'})
+    } else {
+    setItems(prevItems => {
+      return [{id: uuid.v4(), text}, ...prevItems];
+    })
+  }
+  }
+
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+     
       <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <Text>
-          style={[
-           styles.sectionTitle]} This is my first React native app </Text>
-      </ScrollView>
-    </SafeAreaView>
+         contentInsetAdjustmentBehavior="automatic"
+        style={scrollViewStyle}>
+      <View style={scrollViewStyle}>
+        <ShoppingListHeader />
+        <DefautUser/>
+      <View style = {[styles.sectionContainer]}> 
+          <Text style = {styles.shoppingHeaderStyle}>Shopping List</Text>
+          <AddItem addItem={addItem}></AddItem>
+
+          {items.map(item => <ListItem item = {item}
+          deleteItem = {deleteItem}/>) }
+
+          </View>
+     </View>
+       </ScrollView>
   );
 };
 
@@ -78,7 +120,21 @@ const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
+    fontSize : 24,
+    backgroundColor : '#D2F4F4F',
   },
+
+  shoppingHeaderStyle: {
+    marginBottom: 20,
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+
+  textProperties: {
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
@@ -94,3 +150,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
