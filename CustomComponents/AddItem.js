@@ -12,11 +12,14 @@ const AddItem = ({title, addItem}) => {
             placeholder='Add Item...' 
             style = {styles.textInput}
             onChangeText={onChange}
+            value = {text}
             />
             <TouchableOpacity style = {styles.btn}
-            onPress={() => 
+            onPress={() => {
                 addItem(text)
+                setText('')
             }
+       }
             >
             <Text style = {styles.btnText}> 
             <Icon name='plus' size = {20}> </Icon>
