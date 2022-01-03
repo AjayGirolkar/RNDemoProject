@@ -88,7 +88,7 @@ const App: () => Node = () => {
   const addItem = text => {
     if (!text) {
       Alert.alert('Error', 'Please enter an item', {text: 'Ok'})
-    } else if (items.indexOf(text) == -1) {
+    } else if (items.some(item => item.text == text)) {
       Alert.alert('Error', 'Already exist item', {text: 'Ok'})
     } else {
     setItems(prevItems => {
