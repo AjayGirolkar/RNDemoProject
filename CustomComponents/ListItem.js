@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native'
 import Icon  from 'react-native-vector-icons/dist/FontAwesome';
+Icon.loadFont();
 
 const ListItem = ({item, deleteItem}) => {
 

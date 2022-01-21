@@ -1,10 +1,9 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '11.0'
-require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+platform :ios, '14.0'
 
-target 'RNDemoProject' do
+target 'RNDemoProjectSwiftUI' do
   config = use_native_modules!
 
   use_react_native!(
@@ -51,18 +50,7 @@ target 'RNDemoProject' do
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  target 'RNDemoProjectTests' do
+  target 'RNDemoProjectSwiftUITests' do
     inherit! :complete
     # Pods for testing
   end
