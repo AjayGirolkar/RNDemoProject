@@ -10,6 +10,7 @@
 		009D2CCE5DB66BAAFF821DEE /* libPods-RNDemoProjectSwiftUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6CE28F2581769C12086333 /* libPods-RNDemoProjectSwiftUI.a */; };
 		097C2E65B29FB0EA18CE4BF6 /* libPods-RNDemoProjectSwiftUI-RNDemoProjectSwiftUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59DFFF9C398E7948EC91C8 /* libPods-RNDemoProjectSwiftUI-RNDemoProjectSwiftUITests.a */; };
 		AB1DD452279A62E1007AC429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1DD451279A62E1007AC429 /* AppDelegate.swift */; };
+		AB1DD454279BCEE2007AC429 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1DD453279BCEE2007AC429 /* ContactUsViewController.swift */; };
 		AB7B206527968D0A00CFA83A /* RNDemoProjectSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B206427968D0A00CFA83A /* RNDemoProjectSwiftUIApp.swift */; };
 		AB7B206727968D0A00CFA83A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B206627968D0A00CFA83A /* ContentView.swift */; };
 		AB7B206927968D0B00CFA83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB7B206827968D0B00CFA83A /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		94A078A4EE324A3AA04AEA77 /* Pods-RNDemoProjectSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemoProjectSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-RNDemoProjectSwiftUI/Pods-RNDemoProjectSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		9C59DFFF9C398E7948EC91C8 /* libPods-RNDemoProjectSwiftUI-RNDemoProjectSwiftUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDemoProjectSwiftUI-RNDemoProjectSwiftUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1DD451279A62E1007AC429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB1DD453279BCEE2007AC429 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		AB7B206127968D0A00CFA83A /* RNDemoProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDemoProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7B206427968D0A00CFA83A /* RNDemoProjectSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNDemoProjectSwiftUIApp.swift; sourceTree = "<group>"; };
 		AB7B206627968D0A00CFA83A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				AB7B209C2796907B00CFA83A /* ReactNativeViewController.swift */,
 				AB7B209D2796907B00CFA83A /* ReactNativeViewController.xib */,
+				AB1DD453279BCEE2007AC429 /* ContactUsViewController.swift */,
 			);
 			path = UIKitViews;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				AB7B206727968D0A00CFA83A /* ContentView.swift in Sources */,
 				AB7B206527968D0A00CFA83A /* RNDemoProjectSwiftUIApp.swift in Sources */,
 				AB7B209A27968E5900CFA83A /* NativeView.swift in Sources */,
+				AB1DD454279BCEE2007AC429 /* ContactUsViewController.swift in Sources */,
 				AB7B209E2796907B00CFA83A /* ReactNativeViewController.swift in Sources */,
 				AB7B20A12796921C00CFA83A /* SwiftToSwiftUIBridge.swift in Sources */,
 			);

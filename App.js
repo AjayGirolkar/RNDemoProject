@@ -109,7 +109,7 @@ const App: () => Node = () => {
           <Text style = {styles.shoppingHeaderStyle}>Shopping List</Text>
           <AddItem addItem={addItem}></AddItem>
 
-          {items.map(item => <ListItem item = {item}
+          {items.map((item, index) => <ListItem key={index} item = {item}
           deleteItem = {deleteItem}/>) }
 
           </View>

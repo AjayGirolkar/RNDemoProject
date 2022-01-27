@@ -20,3 +20,16 @@ struct ReactNativeViewControllerSUI: UIViewControllerRepresentable {
         
     }
 }
+
+struct ContactUsViewControllerSUI: UIViewControllerRepresentable {
+    typealias UIViewControllerType = ContactUsViewController
+    
+    func makeUIViewController(context: Context) -> ContactUsViewController {
+        let reactNativeViewController = ContactUsViewController()
+        return reactNativeViewController
+    }
+    
+    func updateUIViewController(_ uiViewController: ContactUsViewController, context: Context) {
+        
+    }
+}

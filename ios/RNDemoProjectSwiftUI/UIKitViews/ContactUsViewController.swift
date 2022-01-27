@@ -1,28 +1,29 @@
 //
-//  ReactNativeViewController.swift
+//  ContactUsViewController.swift
 //  RNDemoProjectSwiftUI
 //
-//  Created by Ajay Girolkar on 18/01/22.
+//  Created by Ajay Girolkar on 22/01/22.
 //
 
 import UIKit
 import React
 import SwiftUI
 
-class ReactNativeViewController: UIViewController, RCTBridgeDelegate {
-        
+class ContactUsViewController: UIViewController,  RCTBridgeDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
         
         guard let bridge = RCTBridge(delegate: self, launchOptions: nil) else { return }
-        let rootView = RCTRootView(bridge: bridge, moduleName: "RNDemoProject", initialProperties: nil)
+        let rootView = RCTRootView(bridge: bridge, moduleName: "ContactUs", initialProperties: nil)
         rootView.frame = UIScreen.main.bounds
         //self.view = rootView
         self.view.addSubview(rootView)
     }
     
     func sourceURL(for bridge: RCTBridge!) -> URL! {
-      return  URL(string: "http://localhost:8081/index.bundle?platform=ios")
+       
+      return  URL(string: "/Users/ajaygirolkar/Desktop/ReactNative/RNDemoProject/CustomComponents/ContactUs.js")
     }
 }

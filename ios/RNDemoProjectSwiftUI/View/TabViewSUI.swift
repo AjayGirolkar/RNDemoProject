@@ -19,6 +19,11 @@ struct TabViewSUI: View {
                     .tabItem {
                         Label("React Native", systemImage: "globe")
                     }
+                ContactUsViewControllerSUI()
+                    .tabItem {
+                        Label("Contact Us", systemImage: "phone.bubble.left.fill")
+                    }
+                
             }.navigationTitle("Hybrid Native App")
         }
     }
