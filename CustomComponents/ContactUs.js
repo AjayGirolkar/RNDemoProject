@@ -1,18 +1,35 @@
-import {View, Text, Image, StyleSheet, TouchableOpacity, TextInput, AppRegistry} from 'react-native'
+import React from 'react';
+import {View, Text, Image, StyleSheet, TouchableOpacity, TextInput, AppRegistry} from 'react-native';
 
 
 const ContactUs = () => {
 
 return (
-<View>
-    <Text>
-        This is Contact 
-        
-    </Text>
+<View style={styles.header}>
+    <Text>This is contact us Ajay</Text>
 </View>
-);
+)
+};
 
-}
+const styles = StyleSheet.create({
+
+    header : {
+        height: 60,
+        padding: 15,
+        backgroundColor: '#4682b4'
+    },
+    text: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#FFFFFF'
+    },
+
+    img: {
+        width : 100,
+        height : 100,
+        borderRadius : 100
+    }
+});
+
 export default ContactUs;
-
 AppRegistry.registerComponent('ContactUs', () => ContactUs);

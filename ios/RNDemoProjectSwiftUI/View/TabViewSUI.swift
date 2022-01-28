@@ -15,11 +15,11 @@ struct TabViewSUI: View {
                     .tabItem {
                         Label("Native", systemImage: "iphone")
                     }
-                ReactNativeViewControllerSUI()
+                ReactNativeViewControllerSUI(moduleName: "RNDemoProject")
                     .tabItem {
                         Label("React Native", systemImage: "globe")
                     }
-                ContactUsViewControllerSUI()
+                ReactNativeViewControllerSUI(moduleName: "ContactUs")
                     .tabItem {
                         Label("Contact Us", systemImage: "phone.bubble.left.fill")
                     }

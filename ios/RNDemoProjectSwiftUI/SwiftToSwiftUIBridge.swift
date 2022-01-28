@@ -9,27 +9,15 @@ import Foundation
 import SwiftUI
 
 struct ReactNativeViewControllerSUI: UIViewControllerRepresentable {
+    let moduleName: String
     typealias UIViewControllerType = ReactNativeViewController
     
     func makeUIViewController(context: Context) -> ReactNativeViewController {
-        let reactNativeViewController = ReactNativeViewController()
+        let reactNativeViewController = ReactNativeViewController(moduleName: moduleName)
         return reactNativeViewController
     }
     
     func updateUIViewController(_ uiViewController: ReactNativeViewController, context: Context) {
-        
-    }
-}
-
-struct ContactUsViewControllerSUI: UIViewControllerRepresentable {
-    typealias UIViewControllerType = ContactUsViewController
-    
-    func makeUIViewController(context: Context) -> ContactUsViewController {
-        let reactNativeViewController = ContactUsViewController()
-        return reactNativeViewController
-    }
-    
-    func updateUIViewController(_ uiViewController: ContactUsViewController, context: Context) {
         
     }
 }

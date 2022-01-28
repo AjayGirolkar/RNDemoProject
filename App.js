@@ -12,6 +12,7 @@ import ShoppingListHeader from './CustomComponents/ShoppingListHeader';
 import DefautUser from './CustomComponents/DefautUser';
 import uuid from 'react-native-uuid';
 import AddItem from './CustomComponents/AddItem';
+import ContactUs from './CustomComponents/ContactUs';
 
 import {
   FlatList,
@@ -104,6 +105,7 @@ const App: () => Node = () => {
         style={scrollViewStyle}>
       <View style={scrollViewStyle}>
         <ShoppingListHeader />
+        <ContactUs/>
         <DefautUser/>
       <View style = {[styles.sectionContainer]}> 
           <Text style = {styles.shoppingHeaderStyle}>Shopping List</Text>
@@ -114,6 +116,7 @@ const App: () => Node = () => {
 
           </View>
      </View>
+    
        </ScrollView>
   );
 };

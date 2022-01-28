@@ -2,6 +2,8 @@ import React, { Component, useState } from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity, TextInput} from 'react-native'
 import Icon  from 'react-native-vector-icons/dist/FontAwesome';
 
+Icon.loadFont();
+
 const AddItem = ({title, addItem}) => {
 
     const [text, setText] = useState('');
