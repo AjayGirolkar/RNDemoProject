@@ -47,6 +47,8 @@
 		9C59DFFF9C398E7948EC91C8 /* libPods-RNDemoProjectSwiftUI-RNDemoProjectSwiftUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNDemoProjectSwiftUI-RNDemoProjectSwiftUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1DD451279A62E1007AC429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB61C00B27A41AF70068336A /* ReactNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeViewController.swift; sourceTree = "<group>"; };
+		AB61C00D27A41FAD0068336A /* CustomComponents */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CustomComponents; path = ../CustomComponents; sourceTree = "<group>"; };
+		AB61C00E27A459FB0068336A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB7B206127968D0A00CFA83A /* RNDemoProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDemoProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7B206427968D0A00CFA83A /* RNDemoProjectSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNDemoProjectSwiftUIApp.swift; sourceTree = "<group>"; };
 		AB7B206627968D0A00CFA83A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		AB7B205827968D0A00CFA83A = {
 			isa = PBXGroup;
 			children = (
+				AB61C00D27A41FAD0068336A /* CustomComponents */,
 				AB7B206327968D0A00CFA83A /* RNDemoProjectSwiftUI */,
 				AB7B207927968D0B00CFA83A /* RNDemoProjectSwiftUITests */,
 				AB7B208327968D0B00CFA83A /* RNDemoProjectSwiftUIUITests */,
@@ -140,6 +143,7 @@
 		AB7B206327968D0A00CFA83A /* RNDemoProjectSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				AB61C00E27A459FB0068336A /* Info.plist */,
 				AB1DD451279A62E1007AC429 /* AppDelegate.swift */,
 				AB7B206427968D0A00CFA83A /* RNDemoProjectSwiftUIApp.swift */,
 				AB7B209627968E1800CFA83A /* Resources */,
@@ -631,6 +635,8 @@
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RNDemoProjectSwiftUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "\"\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -663,6 +669,8 @@
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RNDemoProjectSwiftUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "\"\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

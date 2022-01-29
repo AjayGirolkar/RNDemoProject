@@ -105,7 +105,6 @@ const App: () => Node = () => {
         style={scrollViewStyle}>
       <View style={scrollViewStyle}>
         <ShoppingListHeader />
-        <ContactUs/>
         <DefautUser/>
       <View style = {[styles.sectionContainer]}> 
           <Text style = {styles.shoppingHeaderStyle}>Shopping List</Text>

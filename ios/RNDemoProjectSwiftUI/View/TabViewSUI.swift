@@ -24,7 +24,7 @@ struct TabViewSUI: View {
                         Label("Contact Us", systemImage: "phone.bubble.left.fill")
                     }
                 
-            }.navigationTitle("Hybrid Native App")
+            }.navigationBarTitle("Hybrid Native App", displayMode: .inline)
         }
     }
 }
