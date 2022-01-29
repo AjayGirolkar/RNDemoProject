@@ -8,9 +8,9 @@ import { Button } from 'react-native-vector-icons/dist/FontAwesome';
 const ContactUs = () => {
 return (
 <ScrollView style ={styles.MainContainer}>
-    <Text style ={styles.headingLabel}>
+         <Text style ={styles.headingLabel}>
         Banking Questions
-    </Text>
+        </Text>
     
     <DateComponent number = {'888-882-3837'}></DateComponent>
     <Text style ={styles.textStyle}>
