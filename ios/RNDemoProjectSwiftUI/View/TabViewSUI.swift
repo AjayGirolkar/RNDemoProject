@@ -25,7 +25,10 @@ struct TabViewSUI: View {
                     }
                 
             }.navigationBarTitle("Hybrid Native App", displayMode: .inline)
-        }
+        }.background(NavigationConfigurator { nc in
+            nc.navigationBar.barTintColor = .blue
+            nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        })
     }
 }
 

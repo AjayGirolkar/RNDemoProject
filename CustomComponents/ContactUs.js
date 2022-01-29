@@ -49,11 +49,15 @@ return (
     </Text>
     </Text>
 
-<Button
-style = {styles.requestCallButtonStyle}>
-    <Text> Request a Call back</Text>
+    <TouchableOpacity
+    style = {styles.requestCallButtonStyle}
+    onPress= {console.log('request call clicked')}>
+    <Text
+    style = {styles.textSmallBold}>
+        Request a call
+    </Text>
+        </TouchableOpacity>
 
-</Button>
     </ScrollView>
 ) 
 };
@@ -66,7 +70,7 @@ DateComponent = ({number}) => {
             size={20}
             style ={styles.img} 
             name='phone'/>
-            <TouchableOpacity onPress={this.dialCall} activeOpacity={0.7} style={styles.button} >
+            <TouchableOpacity onPress={this.dialCall(phoneNumber = number)} activeOpacity={0.7} style={styles.button} >
             <Text style = {styles.phoneNumber}>
             {number} 
             </Text>
@@ -90,15 +94,16 @@ DateComponent = ({number}) => {
     )
 };
 
-dialCall = () => {
-    let phoneNumber = '';
+dialCall = (phoneNumber) => {
+    let phoneNumberToCall = '';
     if (Platform.OS === 'android') {
-      phoneNumber = 'tel:${1234567890}';
+        phoneNumberToCall = 'tel:${1234567890}';
     }
     else {
-      phoneNumber = 'telprompt:${1234567890}';
+        phoneNumberToCall = 'telprompt:${1234567890}';
     }
-    Linking.openURL(phoneNumber);
+    console.log(phoneNumberToCall)
+    Linking.openURL(phoneNumberToCall);
   };
 
 const styles = StyleSheet.create({
@@ -106,7 +111,7 @@ const styles = StyleSheet.create({
         flex: 1,
        padding: 20,
        paddingBottom: 50,
-       bottomPadding: 80
+       bottomPadding: 80,
       },
 
     topPadding: {
@@ -200,10 +205,14 @@ const styles = StyleSheet.create({
         borderRadius : 1,
     },
     requestCallButtonStyle: {
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#f9dc4a',
-        borderRadius: 10,
-        color: '#0a1d2e'
+        borderRadius: 25,
+        color: '#0a1d2e',
+        width : '100%',
+        height: 50,
+        marginBottom: 50
     },
 });
 
