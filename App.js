@@ -24,7 +24,7 @@ import {
   TextBase,
   useColorScheme,
   View,
-  Alert
+  Alert,
 } from 'react-native';
 
 import {
@@ -67,56 +67,54 @@ const App: () => Node = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  }
+  };
   const scrollViewStyle = {
     flex: 1,
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FFFFFF',
   };
 
   const [items, setItems] = useState([
-          {id: uuid.v4(), text: "Milk"},
-          {id: uuid.v4(), text: "Eggs"},
-          {id: uuid.v4(), text: "Bread"},
-          {id: uuid.v4(), text: "Juice"}
+    {id: uuid.v4(), text: 'Milk'},
+    {id: uuid.v4(), text: 'Eggs'},
+    {id: uuid.v4(), text: 'Bread'},
+    {id: uuid.v4(), text: 'Juice'},
   ]);
 
-  const deleteItem = (id) => {
+  const deleteItem = id => {
     setItems(prevItems => {
-      return prevItems.filter(item => item.id != id)
-    })
-  }
+      return prevItems.filter(item => item.id != id);
+    });
+  };
 
   const addItem = text => {
     if (!text) {
-      Alert.alert('Error', 'Please enter an item', {text: 'Ok'})
+      Alert.alert('Error', 'Please enter an item', {text: 'Ok'});
     } else if (items.some(item => item.text == text)) {
-      Alert.alert('Error', 'Already exist item', {text: 'Ok'})
+      Alert.alert('Error', 'Already exist item', {text: 'Ok'});
     } else {
-    setItems(prevItems => {
-      return [{id: uuid.v4(), text}, ...prevItems];
-    })
-  }
-  }
+      setItems(prevItems => {
+        return [{id: uuid.v4(), text}, ...prevItems];
+      });
+    }
+  };
 
   return (
-     
-      <ScrollView
-         contentInsetAdjustmentBehavior="automatic"
-        style={scrollViewStyle}>
+    <ScrollView
+      contentInsetAdjustmentBehavior="automatic"
+      style={scrollViewStyle}>
       <View style={scrollViewStyle}>
         <ShoppingListHeader />
-        <DefautUser/>
-      <View style = {[styles.sectionContainer]}> 
-          <Text style = {styles.shoppingHeaderStyle}>Shopping List</Text>
+        <DefautUser />
+        <View style={[styles.sectionContainer]}>
+          <Text style={styles.shoppingHeaderStyle}>Shopping List</Text>
           <AddItem addItem={addItem}></AddItem>
 
-          {items.map((item, index) => <ListItem key={index} item = {item}
-          deleteItem = {deleteItem}/>) }
-
-          </View>
-     </View>
-    
-       </ScrollView>
+          {items.map((item, index) => (
+            <ListItem key={index} item={item} deleteItem={deleteItem} />
+          ))}
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -124,21 +122,21 @@ const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
-    fontSize : 24,
-    backgroundColor : '#D2F4F4F',
+    fontSize: 24,
+    backgroundColor: '#D2F4F4F',
   },
 
   shoppingHeaderStyle: {
     marginBottom: 20,
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
 
   textProperties: {
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
-  
+
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
@@ -154,4 +152,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
