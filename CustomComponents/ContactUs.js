@@ -1,4 +1,10 @@
 import React from 'react';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator } from '@react-navigation/native-stack';
+import SecondReactScreen from './Screens/SecondReactScreen'
+
 import {
   View,
   Text,
@@ -10,10 +16,29 @@ import {
   TextInput,
   AppRegistry,
 } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
+
+const Stack = createNativeStackNavigator();
 
 const ContactUs = () => {
+  return (
+  <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="ContactUs"
+          component={ContactUsScreen}
+          options={{ title: 'ContactUs' }}
+        />
+        <Stack.Screen 
+        name="SecondReactScreen" 
+        component={SecondReactScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+};
+
+
+
+const ContactUsScreen = ({ navigation }) => {
   return (
     <ScrollView style={styles.MainContainer}>
       <Text style={styles.headingLabel}>Banking Questions</Text>
@@ -56,6 +81,14 @@ const ContactUs = () => {
         onPress={() => console.log('request call clicked')}>
         <Text style={styles.textSmallBold}>Request a call</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style = {styles.nextButtonStyle}
+        onPress={() => navigation.navigate('SecondReactScreen')}>
+        <Text style={styles.nextButtonTextStle}>
+          Next Scren
+        </Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -67,8 +100,7 @@ DateComponent = ({number}) => {
         <FontAwesome size={20} style={styles.img} name="phone" />
         <TouchableOpacity
           onPress={
-            (() => console.log('request DialCall clicked'),
-            this.DialCall((phoneNumber = number)))
+            (() =>this.DialCall(number))
           }
           activeOpacity={0.7}
           style={styles.button}>
@@ -77,7 +109,7 @@ DateComponent = ({number}) => {
       </View>
 
       <View style={styles.hStack}>
-        <EvilIcons x size={20} name="clock" />
+        <EvilIcons size={20} name="clock" />
         <View style={styles.vStack}>
           <Text>MON-FRI: 8 AM - 8 PM (ET)</Text>
           <Text>SAT-SUN: 9 AM - 7 PM (ET)</Text>
@@ -90,9 +122,9 @@ DateComponent = ({number}) => {
 DialCall = ({phoneNumber}) => {
   let phoneNumberToCall = phoneNumber;
   if (Platform.OS === 'android') {
-    phoneNumberToCall = 'tel:${1234567890}';
+    phoneNumberToCall = 'tel:' + phoneNumber;
   } else {
-    phoneNumberToCall = 'telprompt:${1234567890}';
+    phoneNumberToCall = 'telprompt:' + phoneNumber;
   }
   console.log(phoneNumberToCall);
   Linking.openURL(phoneNumberToCall);
@@ -140,9 +172,11 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     letterSpacing: 5,
     margin: 5,
+    paddingRight: 10,
   },
   vStack: {
     flexDirection: 'column',
+    paddingRight: 10,
   },
   phoneNumber: {
     fontSize: 14,
@@ -200,6 +234,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f9dc4a',
+    borderRadius: 25,
+    color: '#0a1d2e',
+    width: '100%',
+    height: 50,
+    marginBottom: 50,
+  },
+
+  nextButtonTextStle: {
+    fontSize: 14,
+    color: 'white',
+    fontWeight: 'bold',
+  },
+
+  nextButtonStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#288BA8',
     borderRadius: 25,
     color: '#0a1d2e',
     width: '100%',
